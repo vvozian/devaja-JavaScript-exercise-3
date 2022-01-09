@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main_canvas"></div>
+
+    <div class="controls">
+        <input type="text" class="emoji_name_input" placeholder="Type emoji name here">
+        <button class="save_button">Save</button>
+    </div>
+
+    <div class="emojis"></div>
+
+    <div class="loading_overlay hidden">
+        <div class="loader">
+            <div class="loader__circle"></div>
+            <div class="loader__circle"></div>
+            <div class="loader__circle"></div>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="canvas.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
