@@ -43,10 +43,12 @@ async function init() {
     // Get matrix code from URL query (or set default)
     const urlParams = new URLSearchParams(window.location.search);
     let code = urlParams.get('id');
+    console.log(code);
     CODE = code ? code : '0000000000000000'
+    console.log(CODE)
 
     // Creating and show canvas 
-    const mainCanvas = create_matrix(hexToBin(code), true, canvasClick);
+    const mainCanvas = create_matrix(hexToBin(CODE), true, canvasClick);
     document.querySelector('.main_canvas').appendChild(mainCanvas);
 
     // Set matrix code to URL query
@@ -97,48 +99,3 @@ document.querySelector('.save_button').onclick = async () => {
 
 
 init();
-
-othersEmojis();
-
-
-
-// Debug
-// async function othersEmojis() {
-
-//     let otherMatrixes = (await API.get_emoji_list()).response.response;
-//     // console.log(ot)
-//     console.log(otherMatrixes)
-
-//     Object.keys(otherMatrixes).forEach(matrix => {
-
-//         console.log(matrix)
-//         const canvas = create_matrix(hexToBin(matrix), false, null);
-
-//         const emoji = document.createElement('a');
-//         emoji.className = 'emoji';
-//         emoji.setAttribute("href", `?id=${matrix}`);
-
-//         const emojiTitle = document.createElement('div');
-//         emojiTitle.className = 'emoji__title';
-//         emojiTitle.innerText = otherMatrixes[matrix]
-
-//         emoji.appendChild(canvas);
-//         emoji.appendChild(emojiTitle);
-
-//         document.querySelector('.emojis').appendChild(emoji)
-//     })
-// }
-// otherCanvases.forEach(canvas => {
-//     const emoji = document.createElement('a');
-//     emoji.className = 'emoji';
-//     emoji.setAttribute("href", "#");
-
-//     const emojiTitle = document.createElement('div');
-//     emojiTitle.className = 'emoji__title';
-//     emojiTitle.innerText = 'WEmoji title'
-
-//     emoji.appendChild(canvas);
-//     emoji.appendChild(emojiTitle);
-
-//     document.querySelector('.emojis').appendChild(emoji)
-// })
